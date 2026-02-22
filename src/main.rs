@@ -1,3 +1,55 @@
 fn main() {
-    println!("Hello, world!");
+
+    //integer
+    let x: u32 = 33;
+    let y: i32 = -32; 
+    // print!("this is the var x {} and y {}",x,y)
+    //rust is memory sensistivity which means that we can actually control whatever we store, so rust allows i8 till i128 which is basically integer and u8 to u128 which is basically unsighned integer again
+    
+    //booleans
+    let is_male: bool = false;
+    let is_not_male: bool = true;
+    // variables are immutable
+    if is_male && is_not_male{
+        print!("you are a male");
+    }else{
+        print!("you are not a male");
+    }
+
+    //string
+    let greeting: String = String::from("hello world");
+    //as string doesnt have defenitive size
+
+    let greeting_index = greeting.chars().nth(1);
+
+    //out of the box it wont promise you char return it might be char maybe none so to even normally print it you should use a format like this below
+    match greeting_index{
+        Some(c)=> print!("\n this is the character {}",c),
+        None => print!("No character at index"),
+    }
+    print!("\n{}",greeting);
+
+    //loops
+    for i in 0..100{
+
+    }
+    //usually iterate over arrays, maps, strings
+    let sentence =String::from("my name is aadithya");
+
+
+    fn get_my_first_word(val: String)->String{
+        let mut first_word = String::new();
+        for chars in val.chars(){
+            if chars == ' '{
+                break;
+            }
+            first_word.push(chars)
+        }
+
+        return first_word;
+
+    }
+
+    print!("this is my first word{}",get_my_first_word(sentence));
+
 }
