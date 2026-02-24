@@ -52,4 +52,13 @@ fn main() {
 
     print!("this is my first word{}",get_my_first_word(sentence));
 
+
+    fn add_val(val1: i32, val2: i32)->i32{
+        return val1 +val2;
+    }
+
+    let ans = add_val(100, 50);
+
+    print!("this is the sum val {}",ans)
+
 }
