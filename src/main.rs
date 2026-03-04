@@ -65,28 +65,21 @@ fn main() {
 
     // print!("this is the sum val {}",ans)
 
-
-
     loop{
-        println!("Guess a number");
-        let secret_number = rand::thread_rng().gen_range(1..=100); 
-        let mut guess: String = String::new();
-        io::stdin().read_line(&mut guess).expect("Failed to read line");
-        let guess:u32 = match guess.trim().parse(){
-            Ok(num)=>num,
-            Err(_)=>continue,
-        };
-        //parseint from string
-        match guess.cmp(&secret_number){
-            Ordering::Less=>print!("too small"),
-            Ordering::Equal=>{
-                print!("Gotcha");
-                break
-            },
-            Ordering::Greater=>print!("too large")
+        println!("This is a guessing game");
+        let mut val1 = String::new();
+        println!("Type the number");
+        io::stdin().read_line(&mut val1).expect("Sorry not the correct format");
+        let rand_val = rand::thread_rng().gen_range(1..100);
+        let val1:i32 = val1.trim().parse().expect("Hey variable type is different");
+        match val1.cmp(&rand_val){
+            Ordering::Equal=>print!("yes it was on spot"),
+            Ordering::Greater=>print!("you are far fetched"),
+            Ordering::Less=>print!("You are lower")
         }
-    
-        println!("Your guessed string: {}",secret_number);
+
+
+
 
     }
 
