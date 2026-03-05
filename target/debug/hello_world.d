@@ -1,1 +1,1 @@
-/Users/aadithyaniranjan/hobbyproject/Rust-dev/hello_world/target/debug/hello_world: /Users/aadithyaniranjan/hobbyproject/Rust-dev/hello_world/src/main.rs
+/Users/aadinir/personalprojects/rustdevlearning/target/debug/hello_world: /Users/aadinir/personalprojects/rustdevlearning/src/main.rs

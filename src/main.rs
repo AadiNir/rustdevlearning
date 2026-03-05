@@ -65,28 +65,65 @@ fn main() {
 
     // print!("this is the sum val {}",ans)
 
-    loop{
-        println!("This is a guessing game");
-        let mut val1 = String::new();
-        println!("Type the number");
-        io::stdin().read_line(&mut val1).expect("Sorry not the correct format");
-        let rand_val = rand::thread_rng().gen_range(1..100);
-        let val1:i32 = val1.trim().parse().expect("Hey variable type is different");
-        match val1.cmp(&rand_val){
-            Ordering::Equal=>print!("yes it was on spot"),
-            Ordering::Greater=>print!("you are far fetched"),
-            Ordering::Less=>print!("You are lower")
-        }
+    // loop{
+    //     println!("This is a guessing game");
+    //     let mut val1 = String::new();
+    //     println!("Type the number");
+    //     io::stdin().read_line(&mut val1).expect("Sorry not the correct format");
+    //     let rand_val = rand::thread_rng().gen_range(1..100);
+    //     let val1:i32 = val1.trim().parse().expect("Hey variable type is different");
+    //     match val1.cmp(&rand_val){
+    //         Ordering::Equal=>print!("yes it was on spot"),
+    //         Ordering::Greater=>print!("you are far fetched"),
+    //         Ordering::Less=>print!("You are lower")
+    //     }
 
 
 
 
+    // }
+    
+    let tup = ("hey how r u",1000);
+
+    // to get value out of tuple we have to destructure it
+
+    let (channel,sub_count) = tup; //one way
+    let subcount = tup.1;
+
+    let error_code = [230,404];
+
+    let not_founf = error_code[1];
+
+    //types of loop
+
+    let val = loop{
+        break "hey";
+    }; //you can return unlike while
+
+    while false{
+        break;
+    };
+
+    let a = [1,2,3,455,6];
+    for element in a.iter(){
+        println!("thi is the elemenet {}",element);
     }
 
+    let resp = age_valid(22);
 
 
 
 
+}
 
 
+fn age_valid(age:i32)-> &'static str {
+    if age>=18{
+        println!("he is legally obliged");
+    }else if age<18 {
+        println!("he is a minor please leave him");
+    }else {
+        println!("there is some issue with the parameter");
+    }
+    return "status code:200"
 }
