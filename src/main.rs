@@ -111,6 +111,26 @@ fn main() {
 
     let resp = age_valid(22);
 
+    let val1 = String::from("hye how r u");
+    let str2 = val1; //val1 is moved and val1 is cant be accessed as rust moves the pointer and removes it
+
+    let s2 = str2.clone(); //when you do clone you are specificaly mentioning i need two variable
+
+    //even passing a variable in function is consider as moving but to actually do it in a normal way we have to learn the concept of reference 
+
+
+    let s1 = String::from("hey val1");
+
+    fn get_val(s1:String){
+        
+    }
+    // get_val(s1); //here after that you cant use s1, but rather than that dont use the variable use the reference of the variable
+
+    fn get_val2(s1: &String){
+
+    }
+    get_val2(&s1);  //reference are immutable by default, to be mutable you can do &mut, but mutable reference can only appear once in a scope
+    
 
 
 
@@ -126,4 +146,15 @@ fn age_valid(age:i32)-> &'static str {
         println!("there is some issue with the parameter");
     }
     return "status code:200"
+}
+
+
+fn get_my_first_word(val1: &str)-> &str{
+    let bytes = val1.as_bytes();
+    for (index, &val) in bytes.iter().enumerate(){
+        if val == b' '{
+            return &val1[..index];
+        }
+    }
+    return &val1[..];
 }
